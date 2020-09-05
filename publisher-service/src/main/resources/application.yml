@@ -1,0 +1,16 @@
+spring:
+  cloud:
+    stream:
+      default-binder: kafka
+      kafka:
+        binder:
+          brokers:
+            - localhost:9092
+      bindings:
+        output:
+          binder: kafka
+          destination: test
+          group: output-group-1
+
+server:
+  port: 8080
