@@ -16,7 +16,7 @@ public class UserService {
     @Autowired
     private UserRepository userRepository;
 
-    @StreamListener(target = Sink.INPUT, condition = "headers['fromProcessor']=='transformedUser'")
+    @StreamListener(Sink.INPUT)
     public void consumeMessage(User user) {
         userRepository.save(user);
         LOGGER.info("User: " + user.toString() + " saved to DB");

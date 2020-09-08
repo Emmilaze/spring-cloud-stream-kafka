@@ -1,6 +1,9 @@
 package com.example.publisherservice.controller;
 
 import com.example.publisherservice.model.User;
+import org.apache.kafka.common.protocol.types.Field;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.stream.annotation.EnableBinding;
 import org.springframework.cloud.stream.messaging.Source;
@@ -25,7 +28,7 @@ public class Controller {
         output.send(MessageBuilder.withPayload(user)
                 .setHeader("header", "newUser")
                 .build());
-        return "User has been created";
+        return "User with name " + user.getName() + " has been created";
     }
 
 }

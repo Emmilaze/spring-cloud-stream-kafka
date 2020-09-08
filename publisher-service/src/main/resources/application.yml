@@ -8,9 +8,7 @@ spring:
             - localhost:9092
       bindings:
         output:
-          binder: kafka
-          destination: test
-          group: output-group-1
+          destination: processor
 
 server:
   port: 8080

@@ -8,12 +8,8 @@ spring:
             - localhost:9092
       bindings:
         input:
-          binder: kafka
-          destination: test
-          group: input-group-2
+          destination: sink
   jpa:
-    hibernate:
-      ddl-auto: create
     database-platform: org.hibernate.dialect.PostgreSQLDialect
   datasource:
     platform: postgres
