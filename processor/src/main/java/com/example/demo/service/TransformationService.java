@@ -7,7 +7,6 @@ import org.springframework.cloud.stream.annotation.EnableBinding;
 import org.springframework.cloud.stream.annotation.StreamListener;
 import org.springframework.cloud.stream.messaging.Processor;
 import org.springframework.messaging.handler.annotation.SendTo;
-
 import java.util.UUID;
 
 @EnableBinding(Processor.class)
